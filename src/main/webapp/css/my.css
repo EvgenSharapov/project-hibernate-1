@@ -1,13 +1,42 @@
 table, th, td {
-    border: 1px solid black;
+    border: 3px solid black;
     border-collapse: collapse;
     border-radius: 10px;
-    padding: 3px;
+    padding: 4px;
+
 }
 
 th, td {
     background-color: #96D4D4;
 }
+
+.text-shadow-one {
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5),
+    -2px -2px 0 rgba(0, 0, 0, 0.5),
+    2px -2px 0 rgba(0, 0, 0, 0.5),
+    -2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+.text-shadow-two{
+    font-size: 25px;
+    color: white;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5),
+    -2px -2px 0 rgba(0, 0, 0, 0.5),
+    2px -2px 0 rgba(0, 0, 0, 0.5),
+    -2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+.text-shadow-three{
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5),
+    -1px -1px 0 rgba(0, 0, 0, 0.5),
+    1px -1px 0 rgba(0, 0, 0, 0.5),
+    -1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+
 
 th:first-child {
     width: 30px;
@@ -49,12 +78,30 @@ th:nth-child(10) {
     width: 50px;
 }
 
+
 .pgn-bnt-styled {
-    font-size: 14px;
-    margin: 8px;
-    padding: 0 10px;
-    line-height: 2;
+    margin-top: 10px;
+    margin-outside: 5px;
+    margin-bottom: 3px;
+    margin-right: 1px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    outline: none;
+    width: 40px;
+    height: 30px;
 }
+
+.pgn-bnt-styled:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+
 
 .button_delete {
     display: inline-block;
@@ -93,4 +140,10 @@ th:nth-child(10) {
 
 .create__input, .create__select {
     width: 150px;
+}
+.background-image {
+    background-image: url('/css/image/menu1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
 }

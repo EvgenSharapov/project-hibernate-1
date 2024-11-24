@@ -4,10 +4,13 @@
     <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
     <link href="/css/my.css" rel="stylesheet">
 </head>
-<body onload="showList(0)">
-<h1>RPG admin panel</h1>
-<h2>Accounts list:</h2>
-<label for="count_1">Count per page:</label>
+<body class="background-image" onload="showList(0)" >
+
+<h1 class="text-shadow-one">RPG admin panel</h1>
+<h2 class="text-shadow-two">Accounts list:</h2>
+
+<div>
+<label class="text-shadow-three" for="count_1">Count per page:</label>
 
 <select name="count_1" id="count_1" onchange="showList(0)">
     <option value="3">3</option>
@@ -15,6 +18,10 @@
     <option value="10">10</option>
     <option value="20">20</option>
 </select>
+    <div class="text-shadow-three" id="paging_buttons">Pages:</div>
+
+
+</div>
 
 <table class="table_all" id="table_1">
     <tr>
@@ -31,7 +38,7 @@
     </tr>
 </table>
 
-<div id="paging_buttons">Pages:</div>
+
 
 <hr>
 <h2>Create new account:</h2>

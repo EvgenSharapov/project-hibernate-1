@@ -23,10 +23,10 @@ public class PlayerRepositoryDB implements IPlayerRepository {
 
     public PlayerRepositoryDB() {
         Properties properties = new Properties();
-       // properties.put(Environment.DRIVER, "com.p6spy.engine.spy.P6SpyDriver");
-//        properties.put(Environment.URL, "jdbc:p6spy:mysql://localhost:3306/rpg");
-//
-        properties.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
+//        properties.put(Environment.DRIVER, "com.p6spy.engine.spy.P6SpyDriver");
+//        properties.put(Environment.URL, "jdbc:p6spy:mysql://localhost:3305/rpg");
+
+       properties.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
         properties.put(Environment.URL, "jdbc:mysql://localhost:3305/rpg");
         properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
         properties.put(Environment.USER, "root");
@@ -95,7 +95,10 @@ public class PlayerRepositoryDB implements IPlayerRepository {
     public Optional<Player> findById(long id) {
         try (Session session = sessionFactory.openSession()) {
             Player player=session.find(Player.class,id);
-        return Optional.of(player);}
+        return Optional.ofNullable(player);}
+    catch (Exception e) {
+        e.printStackTrace();
+        return Optional.empty(); }
     }
 
     @Override
