@@ -104,6 +104,25 @@ th:nth-child(10) {
     background-color: #1e76d6;
     transform: scale(1.05);
 }
+.pgn-bnt-menu.active {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pgn-bnt-menu:focus {
+    outline: none;
+}
+
+
+.pgn-bnt-menu:active {
+    background-color: #004494;
+    transform: scale(0.95);
+}
+
+
+
+
+
 
 .pgn-bnt-styled {
     margin-top: 10px;
@@ -132,18 +151,22 @@ th:nth-child(10) {
 }
 
 
+
+
+
+
 .select-dropdown {
     background-color: #c1cae6;
     color:white;
-    border-radius: 5px; /* Закругленные углы */
-    padding: 5px 8px; /* Внутренние отступы */
-    font-size: 20px; /* Размер шрифта */
-    cursor: pointer; /* Указатель при наведении */
-    appearance: none; /* Убираем стандартный стиль селекта */
-    outline: none; /* Убираем обводку */
-    transition: border-color 0.3s ease; /* Плавный переход для рамки */
-    position: relative; /* Для ограничения положения стрелки */
-    margin-right: 10px; /* Отступ между текстом и селектом */
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-size: 20px;
+    cursor: pointer;
+    appearance: none;
+    outline: none;
+    transition: border-color 0.3s ease;
+    position: relative;
+    margin-right: 10px;
 
 
 
@@ -152,15 +175,15 @@ th:nth-child(10) {
 }
 
 .select-dropdown:focus {
-    border-color: #0056b3; /* Цвет рамки при фокусе */
+    border-color: #0056b3;
 }
 
-/* Стиль для иконки стрелки */
 
 
-/* Иконка стрелки при наведении */
+
+
 .select-dropdown:hover {
-    border-color: #0056b3; /* Цвет рамки при наведении */
+    border-color: #0056b3;
 }
 
 
@@ -202,10 +225,13 @@ th:nth-child(10) {
 
 .create__input, .create__select {
     width: 150px;
+    border-radius: 5px;
+    background-color: #96D4D4;
+    font-size: 14px;
 }
-.background-image {
-    background-image: url('/css/image/menu1.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
+body {
+    height: 100vh;
+    background-image: url('/css/image/menu2.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }

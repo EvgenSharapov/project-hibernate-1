@@ -1,105 +1,129 @@
-<html>
+<!DOCTYPE html>
+<html lang="eng">
 <head>
     <title>RPG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .content {
+            display: none; /* Скрываем все элементы по умолчанию */
+            margin-top: 20px;
+        }
+        .active {
+            display: block; /* Показываем активный элемент */
+        }
+    </style>
     <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
     <link href="/css/my.css" rel="stylesheet">
 </head>
-<body class="background-image" onload="showList(0)" >
-
+<body class="background-image" >
+<!--<body class="background-image" onload="showList(0)" >-->
 <h1 class="text-shadow-one">RPG admin panel</h1>
-<div >
-    <button class="pgn-bnt-menu">Accounts list</button>
-    <button class="pgn-bnt-menu">Create new account</button>
+<button class="pgn-bnt-menu" id="showData1" onclick="showList(0)">Accounts list</button>
+<button class="pgn-bnt-menu" id="showData2">Create new account</button>
 
+<!--<div >-->
+<!--    <button class="pgn-bnt-menu" id="showData1" >Accounts list</button>-->
+<!--    <button class="pgn-bnt-menu" id="showData2" >Create new account</button>-->
+
+<!--</div>-->
+
+
+<div id="data1" class="content">
+
+    <div>
+        <label class="text-shadow-three" for="count_1">Count per page:</label>
+
+        <select class="select-dropdown" name="count_1" id="count_1" onchange="showList(0)">
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+        </select>
+        <div class="text-shadow-three" id="paging_buttons">Pages:</div>
+
+
+    </div>
+
+    <table class="table_all" id="table_1">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Race</th>
+            <th>Profession</th>
+            <th>Level</th>
+            <th>Birthday</th>
+            <th>Banned</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </table>
 </div>
 
-<div>
-<label class="text-shadow-three" for="count_1">Count per page:</label>
-
-<select class="select-dropdown" name="count_1" id="count_1" onchange="showList(0)">
-    <option value="3">3</option>
-    <option value="5">5</option>
-    <option value="10">10</option>
-</select>
-    <div class="text-shadow-three" id="paging_buttons">Pages:</div>
-
-
-</div>
-
-<table class="table_all" id="table_1">
-    <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Title</th>
-        <th>Race</th>
-        <th>Profession</th>
-        <th>Level</th>
-        <th>Birthday</th>
-        <th>Banned</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-</table>
-
-
-<h2>Create new account:</h2>
-<div class="create">
-    <div class="create__group">
-        <label for="input_name_new">Name:</label>
-        <input class="create__input" type="text" id="input_name_new" name="name" required maxlength="12">
-    </div>
-    <div class="create__group">
-        <label for="input_title_new">Title:</label>
-        <input class="create__input" type="text" id="input_title_new" title="name" required maxlength="30">
-    </div>
-    <div class="create__group">
-        <label for="input_race_new">Race:</label>
-        <select class="create__select" id="input_race_new" name='race'>
-            <option value='HUMAN'>HUMAN</option>
-            <option value='DWARF'>DWARF</option>
-            <option value='ELF'>ELF</option>
-            <option value='GIANT'>GIANT</option>
-            <option value='ORC'>ORC</option>
-            <option value='TROLL'>TROLL</option>
-            <option value='HOBBIT'>HOBBIT</option>
-        </select>
-    </div>
-    <div class="create__group">
-        <label for="input_profession_new">Profession:</label>
-        <select class="create__select" id="input_profession_new" name='profession'>
-            <option value='WARRIOR'>WARRIOR</option>
-            <option value='ROGUE'>ROGUE</option>
-            <option value='SORCERER'>SORCERER</option>
-            <option value='CLERIC'>CLERIC</option>
-            <option value='PALADIN'>PALADIN</option>
-            <option value='NAZGUL'>NAZGUL</option>
-            <option value='WARLOCK'>WARLOCK</option>
-            <option value='DRUID'>DRUID</option>
-        </select>
-    </div>
-    <div class="create__group">
-        <label for="input_level_new">Level:</label>
-        <input class="create__input" type="number" id="input_level_new" name="level" min="0" max="100">
-    </div>
-    <div class="create__group">
-        <label for="input_birthday_new">Birthday:</label>
-        <input class="create__input" type="date" id="input_birthday_new" name="birthday" min="2000-01-01" max="3000-12-31">
-    </div>
-    <div class="create__group">
-        <label for="input_banned_new">Banned:</label>
-        <select class="create__select" id="input_banned_new" name='banned'>
-            <option value='false'>false</option>
-            <option value='true'>true</option>
-        </select>
-    </div>
-    <div class="create__group">
+<div id="data2" class="content">
+    <label class="text-shadow-three">Create new account:</label>
+    <div class="create">
+        <div class="create__group">
+            <label class="text-shadow-three" for="input_name_new">Name:</label>
+            <input class="create__input" type="text" id="input_name_new" name="name" required maxlength="12">
+        </div>
+        <div class="create__group">
+            <label class="text-shadow-three" for="input_title_new">Title:</label>
+            <input class="create__input" type="text" id="input_title_new" title="name" required maxlength="30">
+        </div>
+        <div class="create__group">
+            <label class="text-shadow-three" for="input_race_new">Race:</label>
+            <select class="create__select" id="input_race_new" name='race'>
+                <option value='HUMAN'>HUMAN</option>
+                <option value='DWARF'>DWARF</option>
+                <option value='ELF'>ELF</option>
+                <option value='GIANT'>GIANT</option>
+                <option value='ORC'>ORC</option>
+                <option value='TROLL'>TROLL</option>
+                <option value='HOBBIT'>HOBBIT</option>
+            </select>
+        </div>
+        <div class="create__group">
+            <label class="text-shadow-three" for="input_profession_new">Profession:</label>
+            <select class="create__select" id="input_profession_new" name='profession'>
+                <option value='WARRIOR'>WARRIOR</option>
+                <option value='ROGUE'>ROGUE</option>
+                <option value='SORCERER'>SORCERER</option>
+                <option value='CLERIC'>CLERIC</option>
+                <option value='PALADIN'>PALADIN</option>
+                <option value='NAZGUL'>NAZGUL</option>
+                <option value='WARLOCK'>WARLOCK</option>
+                <option value='DRUID'>DRUID</option>
+            </select>
+        </div>
+        <div class="create__group">
+            <label class="text-shadow-three" for="input_level_new">Level:</label>
+            <input class="create__input" type="number" id="input_level_new" name="level" min="0" max="100">
+        </div>
+        <div class="create__group">
+            <label class="text-shadow-three" for="input_birthday_new">Birthday:</label>
+            <input class="create__input" type="date" id="input_birthday_new" name="birthday" min="2000-01-01" max="3000-12-31">
+        </div>
+        <div class="create__group">
+            <label class="text-shadow-three" for="input_banned_new">Banned:</label>
+            <select class="create__select" id="input_banned_new" name='banned'>
+                <option value='false'>false</option>
+                <option value='true'>true</option>
+            </select>
+        </div>
+        <div class="create__group">
         <span>
             <button type="submit" onclick='createAcc()'>
                 <img src="/img/save.png" alt="">
             </button>
         </span>
+        </div>
     </div>
 </div>
+
+
 <!--<label for="input_name_new">Name:</label>-->
 <!--<input type="text" id="input_name_new" name="name" required size="12" maxlength="12">-->
 <!--<br>-->
@@ -146,6 +170,31 @@
 <!--</span>-->
 
 <script>
+
+    // Функция для скрытия всех элементов и показа выбранного
+    function showContent(selector) {
+        // Получаем все элементы контента
+        const contents = document.querySelectorAll('.content');
+        contents.forEach(content => {
+            content.classList.remove('active'); // Скрыть все элементы
+        });
+        // Покажем только выбранный элемент
+        document.getElementById(selector).classList.add('active');
+    }
+
+    // Обработчик события для первой кнопки
+    document.getElementById('showData1').addEventListener('click', () => {
+        showContent('data1'); // Показываем информацию 1
+    });
+
+    // Обработчик события для второй кнопки
+    document.getElementById('showData2').addEventListener('click', () => {
+        showContent('data2'); // Показываем информацию 2
+    });
+
+
+
+
     function showList(page_number) {
         let url = "/rest/players?";
 
