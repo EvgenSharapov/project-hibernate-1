@@ -79,27 +79,89 @@ th:nth-child(10) {
 }
 
 
+.pgn-bnt-menu {
+    margin-top: 10px;
+    margin-outside: 5px;
+    margin-bottom: 5px;
+    margin-right: 1px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    outline: none;
+    width: 300px;
+    height: 50px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5),
+    -1px -1px 0 rgba(0, 0, 0, 0.5),
+    1px -1px 0 rgba(0, 0, 0, 0.5),
+    -1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.pgn-bnt-menu:hover {
+    background-color: #1e76d6;
+    transform: scale(1.05);
+}
+
 .pgn-bnt-styled {
     margin-top: 10px;
     margin-outside: 5px;
     margin-bottom: 3px;
     margin-right: 1px;
-    background-color: #007BFF;
+    background-color: transparent;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s;
     outline: none;
     width: 40px;
     height: 30px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5),
+    -1px -1px 0 rgba(0, 0, 0, 0.5),
+    1px -1px 0 rgba(0, 0, 0, 0.5),
+    -1px 1px 0 rgba(0, 0, 0, 0.5);
 }
 
 .pgn-bnt-styled:hover {
-        background-color: #0056b3;
+        background-color: #1e76d6;
         transform: scale(1.05);
-    }
+}
+
+
+.select-dropdown {
+    background-color: #c1cae6;
+    color:white;
+    border-radius: 5px; /* Закругленные углы */
+    padding: 5px 8px; /* Внутренние отступы */
+    font-size: 20px; /* Размер шрифта */
+    cursor: pointer; /* Указатель при наведении */
+    appearance: none; /* Убираем стандартный стиль селекта */
+    outline: none; /* Убираем обводку */
+    transition: border-color 0.3s ease; /* Плавный переход для рамки */
+    position: relative; /* Для ограничения положения стрелки */
+    margin-right: 10px; /* Отступ между текстом и селектом */
+
+
+
+
+
+}
+
+.select-dropdown:focus {
+    border-color: #0056b3; /* Цвет рамки при фокусе */
+}
+
+/* Стиль для иконки стрелки */
+
+
+/* Иконка стрелки при наведении */
+.select-dropdown:hover {
+    border-color: #0056b3; /* Цвет рамки при наведении */
+}
 
 
 
